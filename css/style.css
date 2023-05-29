@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(32, 39, 79);
+}
+
+/* UTILITIES */
+header{
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+header h1{
+    font-size: 60px;
+    color: rgb(25, 25, 67);
+    text-align: initial;
+    
+}
+header button{
+    padding: 15px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    border: none;
+}
+.col{
+    width: 50%;
+}
+.container{
+    margin: 50px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#grid{
+    width: 800px;
+    height: 800px;
+    display: flex;
+    width: 1000px;
+    flex-wrap: wrap;
+ 
+}
+.square{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.click-color{
+    background-color: greenyellow;
+
+}
+
+.none{
+    display: none;
+}
+
+.select{
+    padding: 15px;
+    background-color: rgb(37, 45, 43);
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    border: none;
+    
+
+}
