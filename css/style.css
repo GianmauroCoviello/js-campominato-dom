@@ -43,8 +43,8 @@ header button{
     
 }
 #grid{
-    width: 800px;
-    height: 800px;
+    width: 1000px;
+    height: 1000px;
     display: flex;
     width: 1000px;
     flex-wrap: wrap;
@@ -76,5 +76,10 @@ header button{
     margin-top: 8px;
     border: none;
     
+
+}
+
+.click-bombs{
+    background-color: red;
 
 }

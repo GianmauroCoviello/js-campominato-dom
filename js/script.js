@@ -9,13 +9,13 @@ function createSquare() {
 
 
 
-// function randomBombs(min, max) {
+function randomBombs(min, max) {
 
-//     return Math.floor(Math.random()*(max - min +1)+min)
+    return Math.floor(Math.random()*(max - min +1)+min)
     
-// }
+}
 
-// console.log(randomBombs(1,16))
+
 
 
 console.log(createSquare())
@@ -28,6 +28,9 @@ button.addEventListener('click', function() {
     let grid = document.getElementById('grid')
     // VARIABILE CHE DEFINISCA IL NUMERO DI QUADRATINI(SOSTITUIAMO NEL CICLO LA LENGTH CON QUESTO VALORE COSI CHE POSSIAMO SUDDIVIDERLO IN BASE AL NUMERO DI QUADRATINI RICHIESTI DALLE OPTION)
     let numberSquare = 0
+
+
+    let punteggio = 0
 
     numberSquare = parseInt(document.getElementById('level-difficulty').value);
     // SWITCH PER SUDDIVIDERE IL NUMERO DI QUADRATINI IN BASE ALLE OPTION DELLA SELECT CHE RICHIEDE UN NUMERO SPECIFICO
@@ -44,12 +47,22 @@ button.addEventListener('click', function() {
         default:
             break;
     }
-    
+    console.log(randomBombs(1, numberSquare))
+
+    let bombs = [];
+
+    for (i = 0; i < 16 ; i++) {
+        let numberBombs = randomBombs(1, numberSquare)
+        bombs.push(numberBombs)
+        
+        
+    }
+    console.log(bombs)
    
     // CICLO FOR INSERITO PER CICLARE I QUADRATINI
     for (i =0; i < numberSquare ; i++) {
         // VARIABILE CHE RIPRENDE LA FUNZIONE 
-        let square = createSquare()
+        let square = createSquare(bombs)
 
         // VARIABILE CON UNA PROPRIETA CHE DEFINISCE LA RADICE QUADRATA DEL NUMERO DI RIFERIMENTO
         let radiceSquare = Math.sqrt(numberSquare)
@@ -62,10 +75,21 @@ button.addEventListener('click', function() {
         // ADDEVENTLISTENER ALLA CLASSE SQUARE PER FAR CAMBIARE E RIMUOVERE IL COLORE AI QUADRATINI
         square.addEventListener('click', function(){
             // FUNZIONI CHE AGGIUNGONO E TOLGONO LA CLASSE PER IL COLORE AI QUADRATINI('SQUARE') 
-            this.classList.toggle('click-color')
+
             // console.log per riuscire a dare il numero esatto del quadratino in cui ci troviamo
-            console.log(this.innerText)
+            // console.log(this.innerText)
+            if (!bombs.includes(parseInt(this.innerText))) {
+                this.classList.add('click-color')
+                punteggio++
                 
+                
+                
+            } else{
+                this.classList.add('click-bombs')
+                alert( `OPSS.... HAI PERSO, HAI TOTALIZZATO UN PUNTEGGIO PARI A: ${punteggio} `)
+
+            }
+            console.log(punteggio) 
             
         })
 
@@ -82,17 +106,7 @@ button.addEventListener('click', function() {
 
         
 
-
-
-
-
-            
-
-        
-
-        
-
-        
+      
 }
        
 })
