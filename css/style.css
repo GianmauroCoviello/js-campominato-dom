@@ -19,7 +19,13 @@ header{
 }
 header h1{
     font-size: 60px;
-    color: rgb(25, 25, 67);
+    color: rgb(247, 83, 38);
+    text-align: initial;
+    
+}
+header p{
+    font-size: 20px;
+    color: rgb(38, 83, 247);
     text-align: initial;
     
 }
